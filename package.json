@@ -1,0 +1,21 @@
+{
+  "name": "yarn_workspaces_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start:api": "yarn workspace api start",
+    "start:web": "yarn workspace web start",
+    "dev:api": "yarn workspace api dev",
+    "dev:web": "yarn workspace web dev",
+    "start": "concurrently \"yarn start:api\" \"yarn start:web\"",
+    "dev": "concurrently \"yarn dev:api\" \"yarn dev:web\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
